@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Email Voice Assistant (Frontend)</title>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>📧 Email Voice Assistant</h1>
+      <p class="hint">Works best in Chrome. Allow microphone access when asked.</p>
+    </header>
+
+    <section class="controls">
+      <div class="control-row">
+        <button id="btn-check" class="primary">🎤 Check my emails (voice)</button>
+        <button id="btn-refresh">🔄 Refresh</button>
+      </div>
+
+      <hr />
+
+      <h2>Send Email</h2>
+      <div class="form">
+        <label>Recipient (or use voice)</label>
+        <div class="input-with-btn">
+          <input id="to" placeholder="recipient@example.com" />
+          <button class="micro" data-target="to">🎙️</button>
+        </div>
+
+        <label>Subject (or use voice)</label>
+        <div class="input-with-btn">
+          <input id="subject" placeholder="Subject" />
+          <button class="micro" data-target="subject">🎙️</button>
+        </div>
+
+        <label>Body (or use voice)</label>
+        <div class="input-with-btn">
+          <textarea id="body" rows="6" placeholder="Email body..."></textarea>
+          <button class="micro" data-target="body">🎙️</button>
+        </div>
+
+        <div class="control-row">
+          <button id="btn-send" class="accent">📤 Send</button>
+          <button id="btn-send-voice" class="secondary">Send by Voice Flow</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recent Emails</h2>
+      <div id="email-list" class="email-list">
+        <!-- Emails will be injected here -->
+      </div>
+    </section>
+
+    <footer>
+      <small>Frontend only — needs backend endpoints: <code>/check_emails</code> and <code>/send_email</code></small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

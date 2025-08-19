@@ -87,5 +87,3 @@ while True:
     else:
       if voice_input and "exit" in voice_input.lower():
             exit()
-            
-            
